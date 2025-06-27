@@ -1,6 +1,4 @@
-import logo from './Adflyn.jpeg';
-import logo1 from './Adflyn1.png';
-import logo2 from './LogoWhite.png';
+import logo2 from './assets/LogoWhite.png';
 import './App.css';
 
 function App() {
