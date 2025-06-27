@@ -10,7 +10,6 @@ body {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  position: relative;
 }
 .container {
 margin-bottom: 100px;
@@ -43,8 +42,9 @@ h1 {
 
 .footer{
   position: absolute;
-  bottom: 25px;
+  bottom: 0;
   left: 0;
+  padding: 22px 0;
   width: 100%;
   color: #cccccc;
   font-size: 14px;
