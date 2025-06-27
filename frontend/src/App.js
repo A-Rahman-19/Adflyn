@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import logo from './Adflyn.jpeg';
+import logo1 from './Adflyn1.png';
+import logo2 from './LogoWhite.png';
 import './App.css';
 
 function App() {
+  const currentYear = new Date().getFullYear();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <img src={logo2} alt="Adflyn Logo" className="logo fade-in-logo" />
+      <h1 className='fade-in-text'>Adflyn: Simplify. Automate. Market.<br/>All in One Place</h1>
+      <p className="subtitle fade-in-subtext">We're building something powerful.<br/>Stay tuned.</p>
+      <a href="https://www.linkedin.com/company/adflyn/" target="_blank" className="linkedin" rel="noopener noreferrer">
+        <img src=" https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" className='fade-in-icon' />
+      </a>
+      <footer className="footer">
+        &copy; {currentYear} Adflyn. All rights reserved  
+      </footer>
     </div>
   );
 }
