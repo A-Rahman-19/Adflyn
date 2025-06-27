@@ -43,12 +43,11 @@ h1 {
 
 .footer{
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 0;
   width: 100%;
-  padding: 15px 0;
   color: #cccccc;
-  font-size: 0.95rem;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 /* Fade-in and blur reveal animation */
