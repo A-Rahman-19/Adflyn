@@ -50,16 +50,14 @@ h1 {
   font-size: 14px;
   letter-spacing: 1px;
 }
-/* Fade-in and blur reveal animation */
-/* 
+/*
+Fade-in and blur reveal animation
+
 Logo: 0.1s delay
-
-Tagline (words): 0.2s–0.9s staggered
-
+Tagline : 0.2s–0.9s staggered
 Subtitle: 1.0s
-
 LinkedIn Icon: 1.2s
- */
+*/
 @keyframes blurIn {
   0% {
     opacity: 0;
