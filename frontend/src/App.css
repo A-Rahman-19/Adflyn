@@ -35,9 +35,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-.linkedin img {
-  width: 32px;
-  height: 32px;
+.socials {
+  margin: 0 10px;
 }
 
 .footer{
