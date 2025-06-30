@@ -14,7 +14,7 @@ function App() {
         <a href="https://www.linkedin.com/company/adflyn/" target="_blank" className="socials" rel="noopener noreferrer">
        <FontAwesomeIcon icon={faLinkedin} size="2x" color="white" className="fade-in-icon" />
 </a>
-        <a href="https://www.instagram.com/adflyn/" target="_blank" className="socials" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/adflyn_com/" target="_blank" className="socials" rel="noopener noreferrer">
          <FontAwesomeIcon icon={faInstagram} size="2x" color="white" className="fade-in-icon" />
         </a>
       </div>
