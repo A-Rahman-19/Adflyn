@@ -11,10 +11,6 @@ body {
   height: 100vh;
   text-align: center;
 }
-.container {
-margin-bottom: 100px;
-}
-
 .logo {
   width: 150px;
   height: 150px;
@@ -48,6 +44,22 @@ h1 {
   color: #cccccc;
   font-size: 14px;
   letter-spacing: 1px;
+}
+.waitlist-button{
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 50px;
+  &:hover {
+    background: #fff;
+    color: #071a38;
+  }
 }
 /*
 Fade-in and blur reveal animation

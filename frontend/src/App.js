@@ -18,6 +18,9 @@ function App() {
          <FontAwesomeIcon icon={faInstagram} size="2x" color="white" className="fade-in-icon" />
         </a>
       </div>
+      <div className="waitlist-container">
+        <button className="waitlist-button">Join Waitlist</button>
+      </div>
       <footer className="footer">
         &copy; {currentYear} Adflyn. All rights reserved  
       </footer>
