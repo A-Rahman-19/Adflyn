@@ -37,7 +37,7 @@ const Waitlist = () => {
 
   if (showForm) {
     return (
-      <div className='waitlist-container'>
+      <div>
         <form className="waitlist-form fade-in-form" onSubmit={handleSubmit}>
           <div className='inputs'>
             <label htmlFor="firstName">First Name</label>
@@ -98,7 +98,7 @@ const Waitlist = () => {
               onChange={handleChange}
             />
           </div>
-          <button className='waitlist-button' type="submit">Submit</button>
+          <button className='submit-button' type="submit">Submit</button>
         </form>
       </div>
     );

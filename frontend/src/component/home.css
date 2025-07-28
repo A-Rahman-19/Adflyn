@@ -6,10 +6,11 @@ body {
   /* background: linear-gradient(365deg, #080f51, #0b0f1f); */
   color: #ffffff;
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   height: 100vh;
   text-align: center;
+  width: 100%;
 }
 .logo {
   width: 150px;
