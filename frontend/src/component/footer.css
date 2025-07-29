@@ -1,22 +1,8 @@
-/* 
+
 .footer{
   width: 100%;
   padding: 20px 0;
   color: #cccccc;
   font-size: 14px;
   letter-spacing: 1px;
-} */
-.footer {
-  flex-shrink: 0;
-  width: 100%;
-  padding: 20px 0;
-  color: #cccccc;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-}
-@media (max-width: 800px) {
-  .footer{
-  background: none; 
-  }
 }
