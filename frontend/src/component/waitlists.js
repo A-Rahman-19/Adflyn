@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Waitlist = () => {
   const navigate = useNavigate();
-  const currentYear = new Date().getFullYear();
   const [showForm, setShowForm] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
@@ -142,9 +141,6 @@ const Waitlist = () => {
           Join Waitlist!
         </button>
       </div>
-      <footer className="footer">
-        &copy; {currentYear} Adflyn. All rights reserved
-      </footer>
     </>
   );
 };

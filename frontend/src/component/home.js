@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 
 function Home() {
-  const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
 
   return (
@@ -58,9 +57,6 @@ function Home() {
           Join Waitlist!
         </button>
       </div>
-      <footer className="footer">
-        &copy; {currentYear} Adflyn. All rights reserved
-      </footer>
     </>
   );
 }
