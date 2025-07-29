@@ -13,7 +13,7 @@
     color: #071a38;
   }
 }
-.submit-button{
+.submit-button {
   border: 2px solid #fff;
   background: transparent;
   color: #fff;
@@ -22,7 +22,7 @@
   font-size: 1rem;
   font-weight: 600;
   width: 50%;
-margin: 0 auto;
+  margin: 0 auto;
   cursor: pointer;
   margin-top: 15px;
   transition: background 0.2s, color 0.2s;
@@ -80,14 +80,14 @@ margin: 0 auto;
   font-size: 14px;
   box-sizing: border-box;
   color: #fff;
-  font-family:"Noto Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
   box-shadow: none;
-  border-color: transparent; 
+  border-color: transparent;
   border-bottom: 1px solid #ccc;
 }
 
@@ -120,5 +120,9 @@ select:focus {
   .submit-button {
     width: 50%;
     padding: 10px 0;
+  }
+  .waitlist-button1 {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }

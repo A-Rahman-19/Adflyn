@@ -12,11 +12,11 @@ function Home() {
     <>
       <div className="container">
         <img src={logo2} alt="Adflyn Logo" className="logo fade-in-logo" />
-        <h1 className="fade-in-text">
+        <h2 className="fade-in-text">
           Adflyn: Simplify. Automate. Market.
           <br />
           All in One Place
-        </h1>
+        </h2>
         <p className="subtitle fade-in-subtext">
           We're building something powerful.
           <br />

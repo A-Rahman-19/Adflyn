@@ -17,8 +17,8 @@ body {
   height: 150px;
 }
 
-h1 {
-  font-size: 2rem;
+h2 {
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.4;
   margin:0;
@@ -113,9 +113,6 @@ button: 1.5s
     width: 120px;
     height: 120px;
   }
-  h1 {
-    font-size: 1.1rem;
-  }
   .subtitle {
     font-size: 14px;
     line-height: 24px;
@@ -128,8 +125,7 @@ button: 1.5s
     width: 20px;
   }
   .waitlist-button{
-      padding: 10px 20px;
-  font-size: 12px;
-  margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
