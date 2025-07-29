@@ -14,5 +14,9 @@
   font-size: 14px;
   letter-spacing: 1px;
   text-align: center;
-  background: none;
+}
+@media (max-width: 800px) {
+  .footer{
+  background: none; 
+  }
 }
