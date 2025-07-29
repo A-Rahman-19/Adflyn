@@ -6,13 +6,17 @@ import Footer from "./component/footer";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
+    <>
+       <BrowserRouter>
+      <div className="app">
         <Toaster position="top-center" reverseOrder={false} />
-        <AppRoutes />
+        <main className="app-content">
+          <AppRoutes />
+        </main>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
+     </>
   );
 }
 

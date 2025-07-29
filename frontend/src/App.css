@@ -1,0 +1,15 @@
+html, body, #root, .app {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1 0 auto;                  /* Fill the space between header/footer */
+  display: flex;                   /* Make it a flex container */
+  flex-direction: column;          /* Stack children vertically */
+  align-items: center;             /* Horizontal centering */
+  justify-content: center;         /* Vertical centering */
+  min-height: 0;
+}

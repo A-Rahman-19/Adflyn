@@ -104,3 +104,32 @@ button: 1.5s
   animation: blurIn 1s ease-out forwards;
   animation-delay: 1.5s;
 }
+@media (max-width: 800px) {
+  body {
+    /* padding: 20px; */
+    text-align: center;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  h1 {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .waitlist-button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+  .fade-in-icon{
+    width: 20px;
+  }
+  .waitlist-button{
+      padding: 10px 20px;
+  font-size: 12px;
+  margin-top: 20px;
+  }
+}
