@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -10,26 +12,32 @@ app.use(bodyParser.json());
 const PORT = 8000;
 
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'waitlist_db',
-  password: 'postgres',
-  port: 5432,
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
+  // ssl: false,
+  ssl: {
+  rejectUnauthorized: false
+}
 });
 
+
 app.post('/api/waitlist', async (req, res) => {
+  console.log(process.env.PG_USER, process.env.PG_HOST, process.env.PG_DATABASE, process.env.PG_PASSWORD, process.env.PG_PORT);
   const { name, email, company_name, designation, usage } = req.body;
-    console.log('Received data:', req.body);
+  console.log('Received data:', req.body);
   try {
     const query = `
-      INSERT INTO waitlist (name, email, company_name, designation, usage, created_at)
-      VALUES ($1, $2, $3, $4, $5, NOW())
-      RETURNING *;
+    INSERT INTO waitlist (name, email, company_name, designation, usage, created_at)
+    VALUES ($1, $2, $3, $4, $5, NOW())
+    RETURNING *;
     `;
     const values = [name, email, company_name, designation, usage];
-
+    
     const result = await pool.query(query, values);
-
+    
     res.status(201).json({ success: true, data: result.rows[0] });
   } catch (error) {
     console.error('Error inserting into waitlist:', error);
@@ -37,11 +45,20 @@ app.post('/api/waitlist', async (req, res) => {
   }
 });
 
+app.get('/api/user_waitlist', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM waitlist ORDER BY created_at DESC');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error fetching data');
+  }
+});
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: 200, health: 'ok' });
+  res.status(200).json({ status: 200, health: 'ok' });
 });
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
