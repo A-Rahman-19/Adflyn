@@ -1,22 +1,26 @@
-import './waitlists.css'; 
-import React from 'react';
-
+import "./waitlists.css";
+import React from "react";
+import toast from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Waitlist = () => {
+  const navigate = useNavigate();
+  const currentYear = new Date().getFullYear();
   const [showForm, setShowForm] = React.useState(false);
   const [formData, setFormData] = React.useState({
-    firstName: '',
-    email: '',
-    company: '',
-    designation: '',
-    usageDescription: ''
+    name: "",
+    email: "",
+    company_name: "",
+    designation: "",
+    usage: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -24,12 +28,26 @@ const Waitlist = () => {
     console.log(formData);
     e.preventDefault();
     try {
-      await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      const response = await fetch("http://localhost:8000/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      setShowForm(false);
+
+      if (response.ok) {
+        toast.success("You've been added to the waitlist!");
+        navigate("/");
+        setFormData({
+          firstName: "",
+          email: "",
+          company: "",
+          designation: "",
+          usageDescription: "",
+        });
+        setShowForm(false);
+      } else {
+        toast.error("Something went wrong. Please try again later.");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -39,43 +57,45 @@ const Waitlist = () => {
     return (
       <div>
         <form className="waitlist-form fade-in-form" onSubmit={handleSubmit}>
-          <div className='inputs'>
-            <label htmlFor="firstName">First Name</label>
+          <div className="inputs">
+            <label htmlFor="name">Full Name</label>
             <input
-              type="text"
-              id="firstName"
+              type="name"
+              id="name"
               placeholder="Your answer here..."
-              name="firstName"
+              name="name"
               required
-              value={formData.firstName}
+              value={formData.name}
               onChange={handleChange}
             />
           </div>
-          <div className='inputs'>
+          <div className="inputs">
             <label htmlFor="email">Email ID</label>
             <input
               type="email"
               id="email"
               placeholder="Your answer here..."
               name="email"
+              pattern="^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$"
+              title="Enter a valid email address"
               required
               value={formData.email}
               onChange={handleChange}
             />
           </div>
-          <div className='inputs'>
-            <label htmlFor="company">Company Name</label>
+          <div className="inputs">
+            <label htmlFor="company_name">Company Name</label>
             <input
               type="text"
-              id="company"
+              id="company_name"
               placeholder="Your answer here..."
-              name="company"
+              name="company_name"
               required
-              value={formData.company}
+              value={formData.company_name}
               onChange={handleChange}
             />
           </div>
-          <div className='inputs'>
+          <div className="inputs">
             <label htmlFor="designation">Designation</label>
             <input
               type="text"
@@ -87,37 +107,45 @@ const Waitlist = () => {
               onChange={handleChange}
             />
           </div>
-          <div className='inputs'>
-            <label htmlFor="usageDescription">How do you want to use Adflyn?</label>
+          <div className="inputs">
+            <label htmlFor="usage">How do you want to use Adflyn?</label>
             <textarea
-              id="usageDescription"
+              id="usage"
               placeholder="Your answer here..."
-              name="usageDescription"
+              name="usage"
               required
-              value={formData.usageDescription}
+              value={formData.usage}
               onChange={handleChange}
             />
           </div>
-          <button className='submit-button' type="submit">Submit</button>
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
   }
 
   return (
-    <div>
-      <h2 className='fade-in-text'>You're Just in Time.</h2>
-      <p className="subtitle fade-in-subtext">
-        We’re on a mission to build a new kind of marketing system — one where <br/>
-        automation does the heavy lifting, and you stay in control.
-      </p>
-      <button
-        className="waitlist-button1 fade-in-button1"
-        onClick={() => setShowForm(true)}
-      >
-        Join Waitlist!
-      </button>
-    </div>
+    <>
+      <div>
+        <h2 className="fade-in-text">You're Just in Time.</h2>
+        <p className="subtitle fade-in-subtext">
+          We’re on a mission to build a new kind of marketing system — one where{" "}
+          <br />
+          automation does the heavy lifting, and you stay in control.
+        </p>
+        <button
+          className="waitlist-button1 fade-in-button1"
+          onClick={() => setShowForm(true)}
+        >
+          Join Waitlist!
+        </button>
+      </div>
+      <footer className="footer">
+        &copy; {currentYear} Adflyn. All rights reserved
+      </footer>
+    </>
   );
 };
 

@@ -40,11 +40,26 @@ margin: 0 auto;
   animation: blurIn 1s ease-out forwards;
   animation-delay: 0.6s;
 }
-
 .inputs {
   display: flex;
   flex-direction: column;
   margin: 15px 0;
+}
+
+.inputs label {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: blurIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.inputs input,
+.inputs textarea,
+.inputs select {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: blurIn 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .inputs label {
@@ -65,6 +80,15 @@ margin: 0 auto;
   font-size: 14px;
   box-sizing: border-box;
   color: #fff;
+  font-family:"Noto Sans", sans-serif;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: transparent; 
+  border-bottom: 1px solid #ccc;
 }
 
 .inputs textarea {
@@ -88,4 +112,13 @@ margin: 0 auto;
   transform: translateY(20px);
   animation: blurIn 1s ease-out forwards;
   animation-delay: 0.8s;
+}
+@media (max-width: 800px) {
+  .waitlist-form {
+    width: 100%;
+  }
+  .submit-button {
+    width: 50%;
+    padding: 10px 0;
+  }
 }
