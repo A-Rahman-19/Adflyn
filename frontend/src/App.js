@@ -17,15 +17,14 @@ const CountdownSegment = ({ value, label, isHiddenOnSmall = false }) => (
     }`}
     style={{ boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)" }}
   >
-    <span className="block text-4xl md:text-6xl font-extrabold text-purple-600 countdown-style">
+    <span className="block countdown-style">
       {value}
     </span>
     <span className="block text-xs md:text-sm text-gray-500 mt-1">{label}</span>
   </div>
 );
 const App = () => {
-  // Set the target launch date (October 16th of next year for consistent testing)
-  const LAUNCH_DATE = new Date("October 16, 2025 00:00:00").getTime();
+  const LAUNCH_DATE = new Date("December 31, 2025 00:00:00").getTime();
 
   const [days, setDays] = useState("00");
   const [hours, setHours] = useState("00");
@@ -113,7 +112,7 @@ const App = () => {
   return (
     <div
       id="root"
-      className="min-h-screen flex items-center justify-center p-4 text-gray-800 bg-gradient-to-br from-white to-purple-100 main-container"
+      className="min-h-screen flex items-center justify-center p-4 text-gray-800 main-container"
     >
       {/* The Tailwind CDN link is correctly placed in your index.html file. 
                 We remove the script tag here to prevent conflicts. */}
@@ -126,7 +125,7 @@ const App = () => {
           <img
             src={LOGO}
             alt="Adflyn Logo"
-            className="mx-auto h-12 md:h-16 mb-4 adflyn-logo"
+            className="mx-auto adflyn-logo"
           />
           <p className="text-gray-600 mb-6 max-w-xl mx-auto content1">
             Where Ads Fly, Growth
