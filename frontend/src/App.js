@@ -12,7 +12,7 @@ import "./App.css";
 
 const CountdownSegment = ({ value, label, isHiddenOnSmall = false }) => (
   <div
-    className={`p-4 md:p-6 bg-white border border-purple-200 rounded-xl w-24 md:w-32 transition duration-200 hover:transform hover:translate-y-[-4px] hover:shadow-lg ${
+    className={`p-4 md:p-6 bg-white border border-purple-200 rounded-xl w-24 md:w-32 transition duration-200  ${
       isHiddenOnSmall ? "hidden sm:block" : ""
     }`}
     style={{ boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)" }}
@@ -96,11 +96,14 @@ const App = () => {
     ? "Adflyn is officially launched! Start simplifying your marketing today."
     : "We're building something powerful, stay tuned.";
 
-  const buttonText = isLive
-    ? "Go to Adflyn"
-    : isLoading
-    ? "Adding You..."
-    : "Notify Me!";
+  let buttonText;
+  if (isLive) {
+    buttonText = "Go to Adflyn";
+  } else if (isLoading) {
+    buttonText = "Adding You...";
+  } else {
+    buttonText = "Notify Me!";
+  }
   const buttonClass = isLive
     ? "bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700"
     : "bg-purple-600 hover:bg-purple-500 active:bg-purple-700";
@@ -114,7 +117,6 @@ const App = () => {
     >
       {/* The Tailwind CDN link is correctly placed in your index.html file. 
                 We remove the script tag here to prevent conflicts. */}
-
       <div
         className="max-w-5xl w-full mx-auto p-8 md:p-12 bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-purple-500/20 container"
         style={{ boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)" }}
