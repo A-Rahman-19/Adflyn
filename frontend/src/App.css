@@ -1,3 +1,43 @@
-.app{
-    margin-bottom: 50px;
+.main-container{
+    background:  linear-gradient(100deg, #f9d6fc, #b3b4ff);
+}
+.adflyn-logo {
+  height: 12rem;
+  margin-bottom: 0;
+}
+.countdown-style {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+.content1 {
+  font-size: 2rem;
+}
+.title {
+  color: rgb(147 51 234);
+}
+.container {
+  padding-top: 0;
+  box-shadow: 10px 10px 50px 2px rgb(187, 114, 255) !important;
+}
+.cards {
+  transition:  box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 10px;
+}
+.cards:first-child:hover,
+.cards:nth-child(2):hover,
+.cards:nth-child(3):hover {
+  transform: scale(1.05);
+  cursor: pointer;
+box-shadow: 0px 0px 10px 2px rgb(216, 174, 255);
+}
+.highlight {
+    display: inline-block;
+  transition: all 0.3s ease-in-out;
+  margin-right: 8px; 
+}
+.highlight:hover {
+  color: rgb(147 51 234);
+  cursor: pointer;
+  margin: 0 15px;
+  transform: scale(1.2);
 }
