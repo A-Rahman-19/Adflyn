@@ -17,7 +17,7 @@
   color: rgb(147 51 234);
 }
 .container {
-  padding-top: 0;
+  padding-top: 0 !important;
   box-shadow: 10px 10px 50px 2px rgb(187, 114, 255) !important;
 }
 .cards {
