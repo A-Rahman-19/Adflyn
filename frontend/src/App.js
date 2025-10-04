@@ -17,9 +17,7 @@ const CountdownSegment = ({ value, label, isHiddenOnSmall = false }) => (
     }`}
     style={{ boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)" }}
   >
-    <span className="block countdown-style">
-      {value}
-    </span>
+    <span className="block countdown-style">{value}</span>
     <span className="block text-xs md:text-sm text-gray-500 mt-1">{label}</span>
   </div>
 );
@@ -122,14 +120,9 @@ const App = () => {
       >
         {/* Logo/Title Section */}
         <header className="text-center mb-10 hero-header">
-          <img
-            src={LOGO}
-            alt="Adflyn Logo"
-            className="mx-auto adflyn-logo"
-          />
+          <img src={LOGO} alt="Adflyn Logo" className="mx-auto adflyn-logo" />
           <p className="text-gray-600 mb-6 max-w-xl mx-auto content1">
-            Where Ads Fly, Growth
-            Follows.
+            Where Ads Fly, Growth Follows.
           </p>
           <p className="text-xl md:text-2xl slogan">
             {slogan.split(" ").map((word, index) => (
@@ -181,6 +174,14 @@ const App = () => {
               onClick={() => isLive && window.open("/", "_self")} // Redirect if live
             >
               {buttonText}
+            </button>
+            <button
+              type="submit"
+              className={`p-4 w-full md:w-48 text-white font-bold rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] disabled:bg-gray-400 disabled:cursor-not-allowed btn-focus ${buttonClass}`}
+              disabled={isLoading}
+              onClick={() => window.open("/home", "_blank")} // Redirect if live
+            >
+              Join now!
             </button>
           </form>
 
