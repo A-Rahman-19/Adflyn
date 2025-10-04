@@ -176,10 +176,10 @@ const App = () => {
               {buttonText}
             </button>
             <button
-              type="submit"
+              // type="submit"
               className={`p-4 w-full md:w-48 text-white font-bold rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] disabled:bg-gray-400 disabled:cursor-not-allowed btn-focus ${buttonClass}`}
-              disabled={isLoading}
-              onClick={() => window.open("/home", "_blank")} // Redirect if live
+              // disabled={isLoading}
+              onClick={() => window.open("http://localhost:4000/", "_blank")} // Redirect if live
             >
               Join now!
             </button>
